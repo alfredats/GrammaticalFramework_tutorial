@@ -4,11 +4,8 @@ concrete FoodChi of Food = open StringOper in {
         Phrase, Item, Kind, Quality = SS ;
 
     lin
-        -- Everything is in hanyu pinyin because chi chars aren't
-        -- linearizable in cclaw's GF
-        
         -- Partial Application exercise
-        Is = infix "很" ;
+        Is = infix "是" ;
         --Is item quality = cc item (prefix "很" quality) ;
                         -- {s = item.s ++ "很" ++ quality.s} ;
         
@@ -23,16 +20,16 @@ concrete FoodChi of Food = open StringOper in {
         That kind = prefix "那个" kind ;
                     -- {s = "那个" ++ kind.s} ;
 
-        Qkind quality kind = {s = kind.s ++ quality.s} ;
-        Wine = {s = "jiu3"} ;
-        Cheese = {s = "ru3 lao4"} ;
-        Fish = {s = "yu2"} ;
+        Qkind quality kind = {s = quality.s ++ kind.s} ;
+        Wine = ss "酒" ;
+        Cheese = ss "乳酪" ;
+        Fish = ss "鱼" ;
         
-        Very quality = {s = "hen3" ++ quality.s} ;
-        Fresh = {s = "xin1 xian1"} ;
-        Warm = {s = "nuan1"} ;
-        Italian = {s = "yi1 da4 li1 shi4"} ;
-        Expensive = {s = "gui4"} ;
-        Delicious = {s = "mei3 wei4"} ;
-        Boring = {s = "wu2 liao4"} ;
+        Very = prefix "很" ;
+        Fresh = ss "新鲜" ;
+        Warm = ss "暖" ;
+        Italian = ss "意大利式" ;
+        Expensive = ss "贵" ;
+        Delicious = ss "美味" ;
+        Boring = ss "无聊" ;
 }
