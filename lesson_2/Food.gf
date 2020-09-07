@@ -1,4 +1,4 @@
-abstract Food = {
+abstract Food = Drink ** {
     
     -- Establish terminating structure
     flags startcat = Phrase ;
@@ -23,8 +23,9 @@ abstract Food = {
 --        qnIs                : Item -> Quality -> Phrase ;
         This, That          : Kind -> Item ;
         Qkind               : Quality -> Kind -> Kind ;
-        Wine, Cheese, Fish  : Kind ;
+        Cheese, Fish        : Kind ;
 --        Beef, Poultry, Veal : Kind ;
+        DrinkKind           : Drink -> Kind ;
         
         Very                : Quality -> Quality ;
         Fresh, Warm, Italian, Expensive, Delicious, Boring : Quality ;

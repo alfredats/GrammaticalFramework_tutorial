@@ -3,7 +3,7 @@ concrete FoodEng of Food = {
     -- linearization type definitions 
     lincat
         -- Statement, Phrase, Item, Kind, Quality, Prefix = {s : Str} ;
-        Phrase, Item, Kind, Quality = {s : Str} ;
+        Phrase, Item, Kind, Quality, Drink = {s : Str} ;
 
 
     -- linearization definitions, i.e. what records are assigned to each
@@ -22,7 +22,8 @@ concrete FoodEng of Food = {
         This kind           = {s = "this" ++ kind.s} ;
         That kind           = {s = "that" ++ kind.s} ;
         Qkind quality kind  = {s = quality.s ++ kind.s} ;
-        
+        DrinkKind drink     = {s = drink.s} ;
+
         Wine                = {s = "wine"} ;
         Cheese              = {s = "cheese"} ;
         Fish                = {s = "fish"} ;
