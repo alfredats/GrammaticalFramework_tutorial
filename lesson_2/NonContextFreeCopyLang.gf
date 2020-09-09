@@ -5,12 +5,9 @@ abstract NonContextFreeCopyLang = {
     cat 
         Expr ;
         Subexpr ;
-        Terminal ;
 
     fun 
-        a : Terminal ;
-        b : Terminal ;
-        mk_subexpr : Terminal -> Terminal -> Subexpr;
+        atomic : Subexpr ;
         append_a : Subexpr -> Subexpr ;
         append_b : Subexpr -> Subexpr ;
         mk_expr  : Subexpr -> Expr ;
