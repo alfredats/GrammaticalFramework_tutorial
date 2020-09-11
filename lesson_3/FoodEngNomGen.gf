@@ -1,4 +1,11 @@
-concrete FoodEng of Food = {
+-- This version includes the nominative/genitive modifications to 
+-- exemplify the purpose of data abstraction
+
+-- To see what nominative/genitive case does, see:
+-- https://en.wikipedia.org/wiki/Grammatical_case#Indo-European_languages
+
+
+concrete FoodEng of Food = {   
     
     -- linearization type definitions 
     lincat
@@ -23,10 +30,10 @@ concrete FoodEng of Food = {
 
         Wine                = regNoun "wine" ;
         Cheese              = regNoun "cheese" ;
-        Fish                = mkNoun "fish" "fish" ;
-        Beef                = mkNoun "beef" "beef" ;
-        Poultry             = mkNoun "poultry" "poultry";
-        Veal                = mkNoun "veal" "veal" ;
+        Fish                = noun "fish" "fish" ;
+        Beef                = noun "beef" "beef" ;
+        Poultry             = noun "poultry" "poultry";
+        Veal                = noun "veal" "veal" ;
         
         Very quality        = {s = "very" ++ quality.s} ;
         Fresh               = {s = "fresh"} ;
@@ -45,6 +52,7 @@ concrete FoodEng of Food = {
         
     param
         Number = Sg | Pl ;
+        Case = Nom | Gen ; -- Nominative/Genitive case
 
     oper
         Noun : Type = {s: Number => Str} ;
@@ -62,8 +70,14 @@ concrete FoodEng of Food = {
         
         mkNoun : Str -> Str -> Noun = \x, y -> {
             s = table{  
-                Sg => x ;
-                Pl => y 
+                Sg => table{
+                    Nom => x ;
+                    Gen => x + "'s"
+                } ;
+                Pl => table{
+                    Nom => y ;
+                    Gen => y + "'s"
+                }
             }
         } ;
 
