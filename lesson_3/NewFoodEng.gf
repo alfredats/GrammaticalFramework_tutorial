@@ -14,11 +14,31 @@ concrete NewFoodEng of NewFood = open Prelude in {
     NomThese = det Pl Nom "these" ;
     GenThese = det Pl Gen "these" ;
 
+--    Qkind quality noun= {s = table {
+--        Sg => table {
+--          Nom => quality.s ++ noun.s ! Sg ! Nom ;
+--          Gen => quality.s ++ noun.s ! Sg ! Gen
+--        } ;
+--        Pl => table{
+--          Nom => quality.s ++ noun.s ! Pl ! Nom ;
+--          Gen => quality.s ++ noun.s ! Pl ! Gen 
+--        }
+--      }
+--    } ;
+
+    Qkind quality kind = {s = table{
+        n => table{
+          c => quality.s ++ kind.s ! n ! c 
+        }
+      }
+    };
+
     Wine = regNoun "wine" ;
     Fish = mkNoun "fish" "fishes" ;
     
     Very = prefixSS "very" ;
     Fresh = ss "fresh" ;
+    Delicious = ss "delicious" ;
 
   param
     Number = Sg | Pl ;
