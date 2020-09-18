@@ -16,7 +16,7 @@ concrete FoodEng of Food = {
         These               = det Pl "these" ; 
         That                = det Sg "that" ;
         Those               = det Pl "those" ;
-        Qkind quality kind  = {s = table{
+        QKind quality kind  = {s = table{
                                     n => quality.s ++ kind.s ! n
                                     }
                               } ;
@@ -62,8 +62,7 @@ concrete FoodEng of Food = {
         
         mkNoun : Str -> Str -> Noun = \x, y -> {
             s = table{  
-                Sg => x ;
-                Pl => y 
+                Sg => x ; Pl => y 
             }
         } ;
 
