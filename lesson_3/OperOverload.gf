@@ -12,9 +12,9 @@ resource OperOverload = {
     
     Verb : Type = {s : VerbForm => Str} ;
 
-    mkVerb : overload {
+    mkVerb = overload {
       mkVerb : (walk : Str) -> Verb = regVerb ; -- regular
-      mkVerb : (eat,ate,eaten : Str) -> Verb = irregVerb ; -- irregular
+      mkVerb : (eat,ate,eaten : Str) -> Verb = irregVerb  -- irregular
     } ;
 
     regVerb: Str -> Verb = \a -> 
