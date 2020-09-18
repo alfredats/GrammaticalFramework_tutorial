@@ -1,4 +1,4 @@
-resource SmartParadigms = {
+resource RegularPatterns= {
   
   param 
   Number = Sg | Pl ;
