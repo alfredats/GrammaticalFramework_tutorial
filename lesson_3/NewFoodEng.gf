@@ -13,6 +13,10 @@ concrete NewFoodEng of NewFood = open Prelude in {
     GenThis = det Sg Gen "this" ;
     NomThese = det Pl Nom "these" ;
     GenThese = det Pl Gen "these" ;
+    
+
+   -- GenItemSG wine taste = {s = wine.s ! Sg ! Gen ++ taste.s ! Sg} ; 
+    -- GenItemPL wine taste = {s = wine.s ! Pl ! Gen ++ taste.s ! Pl} ; 
 
 --    Qkind quality noun= {s = table {
 --        Sg => table {
@@ -70,6 +74,13 @@ concrete NewFoodEng of NewFood = open Prelude in {
         }
       }
     } ;
+
+--    mkNoun : Str -> Str -> Noun = \x.y -> {
+--      s = table {
+--        Sg => x ;
+--        Pl => y 
+--      } 
+--    } ;
 
     regNoun : Str -> Noun = \x -> mkNoun x (x + "s") ;
     

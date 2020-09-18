@@ -17,6 +17,8 @@ abstract NewFood =  {
         NomThis, GenThis    : Kind -> Item ;
         NomThese, GenThese  : Kind -> Item ;
         That, Those         : Kind -> Item ;
+        GenItemSG           : Kind -> Kind -> Item ;
+        GenItemPL           : Kind -> Kind -> Item ;
 
         Qkind               : Quality -> Kind -> Kind ;
         Wine, Cheese, Fish  : Kind ;
